@@ -70,7 +70,7 @@ function getSpecialtyById(id) {
     ) ?? null;
 }
 
-function updateSpecialty(id, name, description) {
+function updateSpecialty(id, name, description, active) {
     const specialties = getAllSpecialties();
 
     const specialtyIndex = specialties.findIndex(
@@ -83,6 +83,10 @@ function updateSpecialty(id, name, description) {
 
     specialties[specialtyIndex].name = name;
     specialties[specialtyIndex].description = description;
+
+    if (active !== undefined) {
+        specialties[specialtyIndex].active = active;
+    }
 
     saveSpecialties(specialties);
 

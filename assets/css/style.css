@@ -62,7 +62,8 @@ a { color: inherit; }
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
 .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.65rem 0.85rem;
@@ -72,7 +73,8 @@ a { color: inherit; }
   color: var(--text);
 }
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: 2px solid var(--teal);
   outline-offset: 1px;
 }

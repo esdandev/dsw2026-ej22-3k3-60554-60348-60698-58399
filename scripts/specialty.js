@@ -3,6 +3,9 @@ const form = document.getElementById("specialty-form");
 const nameInput = document.getElementById("name");
 const descriptionInput = document.getElementById("description");
 
+const statusGroup = document.getElementById("status-group");
+const statusInput = document.getElementById("status");
+
 const nameError = document.getElementById("name-error");
 const descriptionError = document.getElementById("description-error");
 
@@ -22,6 +25,9 @@ if (specialtyId !== null) {
     } else {
         nameInput.value = specialty.name;
         descriptionInput.value = specialty.description;
+
+        statusGroup.hidden = false;
+        statusInput.value = specialty.active ? "active" : "inactive";
 
         formTitle.textContent = "Editar Especialidad";
         breadcrumbCurrent.textContent = "Editar Especialidad";
@@ -65,7 +71,7 @@ form.addEventListener("submit", (event) => {
         if (specialtyId === null) {
             addSpecialty(name, description);
         } else {
-            updateSpecialty(specialtyId, name, description);
+            updateSpecialty(specialtyId, name, description, statusInput.value === "active");
         }
 
         window.location.href = "specialties.html";
